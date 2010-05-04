@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   minWidth="1024" 
+			   minHeight="768" 
+			   frameRate="60"
+			   xmlns:app="co.uk.mikecann.app.*" xmlns:mx="library://ns.adobe.com/flex/mx"
+			  >
+	
+	<fx:Declarations>
+		<app:CirclesContext contextView="{this}" sceneLayer="{sceneLayer}" />
+	</fx:Declarations>
+	
+	<mx:UIComponent id="sceneLayer" />
+	
+</s:Application>
