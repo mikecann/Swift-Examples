@@ -44,7 +44,7 @@ package co.uk.swft.shooter.entities.bullets
 		
 		protected function onCollision(collidesWith:ICollider) : void
 		{
-			if (collidesWith.owner is Player) { return; }
+			if (collidesWith.entity is Player) { return; }
 			onReadyForDestroy.dispatch();
 		}
 		

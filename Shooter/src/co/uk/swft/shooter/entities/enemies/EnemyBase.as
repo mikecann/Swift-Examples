@@ -41,10 +41,10 @@ package co.uk.swft.shooter.entities.enemies
 		
 		protected function onCollision(collidesWith:ICollider) : void
 		{
-			if (collidesWith.owner is Player){ health.changeHitpoints(-100000); }
-			if (collidesWith.owner is Bullet)
+			if (collidesWith.entity is Player){ health.changeHitpoints(-100000); }
+			if (collidesWith.entity is Bullet)
 			{
-				var b : Bullet = collidesWith.owner as Bullet;
+				var b : Bullet = collidesWith.entity as Bullet;
 				health.changeHitpoints(-b.damage);
 			}
 		}

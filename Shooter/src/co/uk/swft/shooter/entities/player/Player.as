@@ -74,7 +74,7 @@ package co.uk.swft.shooter.entities.player
 		
 		protected function onCollision(collidesWith:ICollider) : void
 		{
-			if (collidesWith.owner is EnemyBase)
+			if (collidesWith.entity is EnemyBase)
 			{
 				onHitByEnemy.dispatch();
 			}
