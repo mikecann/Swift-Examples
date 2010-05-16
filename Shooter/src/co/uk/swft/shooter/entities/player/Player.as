@@ -30,7 +30,7 @@ package co.uk.swft.shooter.entities.player
 		[Inject] public var bullets : BulletManager;
 		
 		// Signals
-		public var onHitByEnemy : Signal = new Signal();
+		public var onHitByEnemy : Signal = registerSignal(new Signal());
 		
 		// Components
 		[Inject] public var renderer : SimpleSpriteRenderer;

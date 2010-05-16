@@ -7,7 +7,7 @@ package co.uk.swft.shooter.components.other
 	public class HealthComponent extends EntityComponent
 	{
 		// Signals
-		public var onHPReachedMinimum : Signal = new Signal();
+		public var onHPReachedMinimum : Signal = registerSignal(new Signal());
 		
 		// Protecteds
 		protected var _currentHP : Number = 100;

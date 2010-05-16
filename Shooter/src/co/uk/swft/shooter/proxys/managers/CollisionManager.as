@@ -1,10 +1,11 @@
 package co.uk.swft.shooter.proxys.managers
 {
+	import co.uk.swft.base.GameManager;
 	import co.uk.swft.shooter.components.collision.ICollider;
 	
 	import org.robotlegs.mvcs.Actor;
 	
-	public class CollisionManager extends Actor implements IUpdateable
+	public class CollisionManager extends GameManager implements IUpdateable
 	{
 		// Dependencies
 		[Inject] public var scene : IScene;
@@ -12,7 +13,7 @@ package co.uk.swft.shooter.proxys.managers
 		// Protecteds
 		protected var _collidables : Array;
 		
-		public function init() : void
+		override public function onGameStartup():void
 		{
 			_collidables = [];
 			scene.registerForUpdates(this);

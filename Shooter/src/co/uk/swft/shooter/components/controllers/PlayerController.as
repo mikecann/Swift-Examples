@@ -17,7 +17,7 @@ package co.uk.swft.shooter.components.controllers
 		[Inject] public var spatial : ISpatial2DComponent;
 		
 		// Signals
-		public var shootBullet : Signal = new Signal();
+		public var shootBullet : Signal = registerSignal(new Signal());
 		
 		// Protecteds
 		protected var _mouseDown : Boolean = false;
@@ -25,6 +25,7 @@ package co.uk.swft.shooter.components.controllers
 		
 		override public function onRegister():void
 		{
+			super.onRegister();
 			scene.registerForUpdates(this);	
 			scene.stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown, false, 0, true);
 			scene.stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp, false, 0, true);
@@ -32,6 +33,7 @@ package co.uk.swft.shooter.components.controllers
 		
 		override public function onRemove():void
 		{
+			super.onRemove();
 			scene.unRegisterForUpdates(this);
 			scene.stage.removeEventListener(MouseEvent.MOUSE_DOWN, onMouseDown, false);
 			scene.stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp, false);

@@ -1,5 +1,6 @@
 package co.uk.swft.shooter.proxys.managers
 {
+	import co.uk.swft.base.GameManager;
 	import co.uk.swft.shooter.components.rendering.SpriteSheet;
 	
 	import flash.display.MovieClip;
@@ -12,12 +13,12 @@ package co.uk.swft.shooter.proxys.managers
 	 * This class should handle loading from URLs too but for now
 	 * ill just embed everything 
 	*/
-	public class ResourceManager extends Actor
+	public class ResourceManager extends GameManager
 	{				
 		// Protecteds
 		protected var _resourceCache : Dictionary;
 		
-		public function init() : void			
+		override public function onGameStartup():void
 		{
 			_resourceCache = new Dictionary();
 		}
@@ -33,6 +34,7 @@ package co.uk.swft.shooter.proxys.managers
 			return _resourceCache[source];			
 		}		
 		
+		override public function get priority() : int { return 10; }
 		
 	}
 }

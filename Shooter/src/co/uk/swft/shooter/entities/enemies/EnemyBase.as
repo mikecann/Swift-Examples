@@ -21,8 +21,8 @@ package co.uk.swft.shooter.entities.enemies
 		[Inject] public var health : HealthComponent;
 		
 		// Signals
-		public var onNoHP : Signal = new Signal();
-		public var onLeftScreen : Signal = new Signal();
+		public var onNoHP : Signal = registerSignal(new Signal());
+		public var onLeftScreen : Signal = registerSignal(new Signal());
 		
 		override public function mapComponents() : void
 		{
@@ -35,6 +35,7 @@ package co.uk.swft.shooter.entities.enemies
 		
 		override public function onRegister():void
 		{
+			super.onRegister();
 			collider.onCollision.add( onCollision );
 			health.onHPReachedMinimum.add( onNoHP.dispatch );
 		}

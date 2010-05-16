@@ -16,7 +16,7 @@ package co.uk.swft.shooter.components.rendering
 		[Inject] public var spatial : ISpatial2DComponent;
 		
 		// Signals
-		public var onAnimationComplete : Signal = new Signal();
+		public var onAnimationComplete : Signal = registerSignal(new Signal());
 		
 		// Publics
 		public var sheet : SpriteSheet;
@@ -31,6 +31,7 @@ package co.uk.swft.shooter.components.rendering
 						
 		override public function onRegister():void
 		{
+			super.onRegister();
 			_bitmap = new Bitmap();
 			_playCount = 0;
 			currentFrameIndex = 0;
@@ -73,6 +74,7 @@ package co.uk.swft.shooter.components.rendering
 		
 		override public function onRemove():void
 		{
+			super.onRemove();
 			scene.unRegisterForUpdates(this);
 			scene.removeChild(_bitmap);
 		}		

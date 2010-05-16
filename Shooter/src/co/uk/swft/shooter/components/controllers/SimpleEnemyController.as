@@ -14,15 +14,17 @@ package co.uk.swft.shooter.components.controllers
 		[Inject] public var spatial : ISpatial2DComponent;
 		
 		// Signals
-		public var outsideArea : Signal = new Signal();
+		public var outsideArea : Signal = registerSignal(new Signal());
 		
 		override public function onRegister():void
 		{
+			super.onRegister();
 			scene.registerForUpdates(this);				
 		}
 		
 		override public function onRemove():void
 		{
+			super.onRemove();
 			scene.unRegisterForUpdates(this);
 		}
 		

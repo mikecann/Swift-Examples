@@ -13,6 +13,7 @@ package co.uk.swft.shooter
 	import co.uk.swft.shooter.signals.GameStartupSignal;
 	
 	import flash.display.DisplayObjectContainer;
+	import flash.ui.Mouse;
 	
 	public class ShooterContext extends GameContext
 	{
@@ -23,14 +24,17 @@ package co.uk.swft.shooter
 		
 		override public function startup():void
 		{
+			// No Mouse for this game
+			Mouse.hide();
+			
 			// Map some managers
-			injector.mapSingletonOf(IScene,SceneManager);
-			injector.mapSingleton(EnemyManager);
-			injector.mapSingleton(CollisionManager);
-			injector.mapSingleton(GameplayManager);
-			injector.mapSingleton(EffectsManager);
-			injector.mapSingleton(ResourceManager);
-			injector.mapSingleton(BulletManager);
+			gameManagerMap.mapManagerOf(IScene,SceneManager);
+			gameManagerMap.mapManager(EnemyManager);
+			gameManagerMap.mapManager(CollisionManager);
+			gameManagerMap.mapManager(GameplayManager);
+			gameManagerMap.mapManager(EffectsManager);
+			gameManagerMap.mapManager(ResourceManager);
+			gameManagerMap.mapManager(BulletManager);
 			
 			// Start the ball rolling
 			(signalCommandMap.mapSignalClass(GameStartupSignal, GameStartupCommand, true) as GameStartupSignal).dispatch();

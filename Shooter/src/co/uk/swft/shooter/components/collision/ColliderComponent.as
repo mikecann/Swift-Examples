@@ -16,7 +16,7 @@ package co.uk.swft.shooter.components.collision
 		
 		// Protecteds
 		protected var _collisionRadius : Number;
-		protected var _onCollision : Signal = new Signal(ICollider);
+		protected var _onCollision : Signal = registerSignal(new Signal(ICollider));
 		
 		override public function onRegister():void
 		{

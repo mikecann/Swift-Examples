@@ -1,6 +1,7 @@
 package co.uk.swft.shooter.proxys.managers
 {	
 	import co.uk.swft.base.Entity;
+	import co.uk.swft.base.GameManager;
 	
 	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
@@ -11,7 +12,7 @@ package co.uk.swft.shooter.proxys.managers
 	
 	import org.robotlegs.mvcs.Actor;
 	
-	public class SceneManager extends Actor implements IScene
+	public class SceneManager extends GameManager implements IScene
 	{	
 		// Assets
 		[Embed(source="assets/assets.swf", symbol="bg_scroll")] public const background : Class;
@@ -22,11 +23,9 @@ package co.uk.swft.shooter.proxys.managers
 		protected var _backgroundContainer : Sprite;
 		protected var _sceneSprite : Sprite;
 		protected var _lastFrameTime : int;
-		
-		public function init(sceneContainer:DisplayObjectContainer) : void
+
+		override public function onGameStartup():void
 		{
-			_sceneContainer = sceneContainer;
-					
 			// First add the background
 			_sceneContainer.addChild(new background());
 			
@@ -70,6 +69,11 @@ package co.uk.swft.shooter.proxys.managers
 			_sceneSprite.removeChild(child);
 		}
 		
+		override public function get priority() : int { return 9; }
+		
 		public function get stage() : Stage { return _sceneSprite.stage; }
+		
+		public function get sceneContainer() : DisplayObjectContainer { return _sceneContainer; }
+		public function set sceneContainer(value:DisplayObjectContainer) : void { _sceneContainer=value; }
 	}
 }

@@ -20,11 +20,13 @@ package co.uk.swft.shooter.components.rendering
 		
 		override public function onRegister():void
 		{
+			super.onRegister();
 			scene.registerForUpdates(this);				
 		}
 		
 		override public function onRemove():void
 		{
+			super.onRemove();
 			scene.unRegisterForUpdates(this);
 			sprite = null;
 		}

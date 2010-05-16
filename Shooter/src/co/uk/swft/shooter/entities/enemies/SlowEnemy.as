@@ -4,8 +4,6 @@ package co.uk.swft.shooter.entities.enemies
 	import co.uk.swft.shooter.proxys.assets.GameAssets;
 	import co.uk.swft.shooter.proxys.managers.ResourceManager;
 	
-	import org.osmf.layout.AbsoluteLayoutFacet;
-	
 	public class SlowEnemy extends EnemyBase
 	{
 		// Dependencies

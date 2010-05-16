@@ -24,7 +24,7 @@ package co.uk.swft.shooter.entities.bullets
 		public var damage : int = 20;
 		
 		// Signals
-		public var onReadyForDestroy : Signal = new Signal();
+		public var onReadyForDestroy : Signal = registerSignal(new Signal());
 		
 		override public function mapComponents() : void
 		{

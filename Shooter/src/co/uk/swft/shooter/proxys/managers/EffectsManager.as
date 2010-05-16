@@ -1,11 +1,12 @@
 package co.uk.swft.shooter.proxys.managers
 {
+	import co.uk.swft.base.GameManager;
 	import co.uk.swft.core.IEntityMap;
 	import co.uk.swft.shooter.entities.effects.AnimatedEffect;
 	
 	import org.robotlegs.mvcs.Actor;
 	
-	public class EffectsManager extends Actor
+	public class EffectsManager extends GameManager
 	{
 		// Dependencies
 		[Inject] public var entityMap : IEntityMap;
@@ -13,7 +14,7 @@ package co.uk.swft.shooter.proxys.managers
 		// Protected
 		public var _effects : Array;
 		
-		public function init() : void			
+		override public function onGameStartup():void
 		{
 			_effects = [];
 		}

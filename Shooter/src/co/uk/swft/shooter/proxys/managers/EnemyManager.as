@@ -1,6 +1,7 @@
 package co.uk.swft.shooter.proxys.managers
 {
 	import co.uk.swft.base.Entity;
+	import co.uk.swft.base.GameManager;
 	import co.uk.swft.core.IEntity;
 	import co.uk.swft.core.IEntityMap;
 	import co.uk.swft.shooter.components.rendering.SpriteSheet;
@@ -14,7 +15,7 @@ package co.uk.swft.shooter.proxys.managers
 	
 	import org.robotlegs.mvcs.Actor;
 	
-	public class EnemyManager extends Actor implements IUpdateable
+	public class EnemyManager extends GameManager implements IUpdateable
 	{
 		// Dependencies
 		[Inject] public var scene : IScene;
@@ -27,7 +28,7 @@ package co.uk.swft.shooter.proxys.managers
 		protected var _enemySpawnTimer : int=0;
 		protected var _enemies : Array = [];
 		
-		public function init() : void
+		override public function onGameStartup():void
 		{
 			_enemySpawnTimeLimit = 1000 + Math.random()*2000;
 			scene.registerForUpdates(this);

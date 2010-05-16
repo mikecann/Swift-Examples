@@ -1,11 +1,14 @@
 package co.uk.swft.shooter.proxys.managers
 {
+	import co.uk.swft.base.GameManager;
 	import co.uk.swft.core.IEntityMap;
 	import co.uk.swft.shooter.entities.bullets.Bullet;
 	
+	import flash.system.System;
+	
 	import org.robotlegs.mvcs.Actor;
 	
-	public class BulletManager extends Actor
+	public class BulletManager extends GameManager
 	{		
 		// Dependencies
 		[Inject] public var entityMap : IEntityMap;
@@ -13,7 +16,7 @@ package co.uk.swft.shooter.proxys.managers
 		// Protecteds
 		protected var _bullets : Array;
 		
-		public function init() : void
+		override public function onGameStartup():void
 		{
 			_bullets = [];
 		}
