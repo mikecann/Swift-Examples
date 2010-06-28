@@ -19,7 +19,6 @@ package co.uk.swft.shooter.proxys.managers
 	{
 		// Dependencies
 		[Inject] public var scene : IScene;
-		[Inject] public var entityMap : IEntityMap;
 		[Inject] public var effects : EffectsManager;
 		[Inject] public var resources : ResourceManager;
 		
@@ -66,7 +65,7 @@ package co.uk.swft.shooter.proxys.managers
 		public function removeEnemy(enemy:EnemyBase) : void
 		{
 			_enemies.splice(_enemies.indexOf(enemy),1);
-			enemy.onRemove();
+			entityMap.removeEntity(enemy);
 		}
 		
 		public function dettonateEnemy(enemy:EnemyBase) : void

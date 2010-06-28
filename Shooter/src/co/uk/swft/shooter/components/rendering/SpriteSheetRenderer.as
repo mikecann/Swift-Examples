@@ -16,7 +16,7 @@ package co.uk.swft.shooter.components.rendering
 		[Inject] public var spatial : ISpatial2DComponent;
 		
 		// Signals
-		public var onAnimationComplete : Signal = registerSignal(new Signal());
+		public var onAnimationComplete : Signal = new Signal();
 		
 		// Publics
 		public var sheet : SpriteSheet;

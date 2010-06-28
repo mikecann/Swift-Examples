@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   width="600" height="500" frameRate="60"
+			   xmlns:bblaster="co.uk.swft.bblaster.*" xmlns:local="*" xmlns:components="co.uk.swft.bblaster.view.components.*">
+	
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace bblaster "co.uk.swft.bblaster.*";
+		@namespace local "*";
+		@namespace components "co.uk.swft.bblaster.view.components.*";
+				
+		@font-face {
+			src: url("assets/HoboStd.otf");
+			fontFamily: HoboStd;
+			fontStyle: normal;
+			fontWeight: normal;
+			advancedAntiAliasing: true;
+			embedAsCFF: true;		
+		}
+		
+		s|Label.hudText
+		{
+			fontFamily: HoboStd;
+			fontLookup: embeddedCFF;
+			fontSize: 30;
+		}
+		
+	</fx:Style>
+	
+	<fx:Declarations>
+		<bblaster:BBlasterContext contextView="{this}" />
+	</fx:Declarations>
+	<mx:UIComponent id="gameLayer" />
+	<mx:UIComponent id="statsLayer" />
+	<components:GameHUD width="100%" height="100%" />
+</s:Application>

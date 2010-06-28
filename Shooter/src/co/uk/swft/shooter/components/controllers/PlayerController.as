@@ -17,7 +17,7 @@ package co.uk.swft.shooter.components.controllers
 		[Inject] public var spatial : ISpatial2DComponent;
 		
 		// Signals
-		public var shootBullet : Signal = registerSignal(new Signal());
+		public var shootBullet : Signal = new Signal();
 		
 		// Protecteds
 		protected var _mouseDown : Boolean = false;

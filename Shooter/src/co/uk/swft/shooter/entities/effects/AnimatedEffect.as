@@ -26,7 +26,6 @@ package co.uk.swft.shooter.entities.effects
 		
 		override public function onRegister():void
 		{
-			super.onRegister();	
 			renderer.timesToPlay = 1;
 			renderer.onAnimationComplete.add( onEffectComplete.dispatch );
 		}	

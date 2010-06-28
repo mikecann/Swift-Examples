@@ -9,10 +9,7 @@ package co.uk.swft.shooter.proxys.managers
 	import org.robotlegs.mvcs.Actor;
 	
 	public class BulletManager extends GameManager
-	{		
-		// Dependencies
-		[Inject] public var entityMap : IEntityMap;
-		
+	{			
 		// Protecteds
 		protected var _bullets : Array;
 		
@@ -32,7 +29,7 @@ package co.uk.swft.shooter.proxys.managers
 		public function removeBullet(bullet:Bullet) : void
 		{
 			_bullets.splice(_bullets.indexOf(bullet),1);
-			bullet.onRemove();
+			entityMap.removeEntity(bullet);
 		}
 	}
 }

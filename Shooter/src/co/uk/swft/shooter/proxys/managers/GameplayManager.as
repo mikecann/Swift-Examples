@@ -8,9 +8,6 @@ package co.uk.swft.shooter.proxys.managers
 	
 	public class GameplayManager extends GameManager
 	{
-		// Dependencies
-		[Inject] public var entityMap : IEntityMap;
-		
 		// Protecteds
 		protected var _player : Player;
 		

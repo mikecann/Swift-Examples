@@ -7,10 +7,7 @@ package co.uk.swft.shooter.proxys.managers
 	import org.robotlegs.mvcs.Actor;
 	
 	public class EffectsManager extends GameManager
-	{
-		// Dependencies
-		[Inject] public var entityMap : IEntityMap;
-		
+	{		
 		// Protected
 		public var _effects : Array;
 		
@@ -28,9 +25,9 @@ package co.uk.swft.shooter.proxys.managers
 		}
 		
 		public function removeEffect(effect:AnimatedEffect) : void
-		{
-			effect.onRemove();
+		{			
 			_effects.splice(_effects.indexOf(effect),1);
+			entityMap.removeEntity(effect);
 		}
 	}
 }
